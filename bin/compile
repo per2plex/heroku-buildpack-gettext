@@ -1,0 +1,24 @@
+#!/bin/bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+# Fail fast and fail hard.
+set -eo pipefail
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+BIN_DIR=$(cd $(dirname $0); pwd)
+ROOT_DIR=$(dirname $BIN_DIR)
+WORKING_DIR=$(pwd)
+VENDOR_DIR=".vendor/gettext"
+DEST_DIR=$BUILD_DIR/$VENDOR_DIR
+
+echo "-----> Installing gettext"
+
+mkdir -p $DEST_DIR
+
+curl https://s3-sa-east-1.amazonaws.com/heroku-buildpack-gettext/libraries/gettext.tar.gz -s | tar xzv -C $DEST_DIR > /dev/null 2>&1
+
+# TODO Export PATH and LD_LIBRARY_PATH so that other buildpacks can pick up
+# our installed libraries later.
+
+echo "-----> Done."
