@@ -1,5 +1,5 @@
 heroku-buildpack-gettext
 ========================
 
-Install gettext into `/.heroku/gettext`.
+Installs gettext into `/.heroku/gettext` and makes it available in the environment.
 
