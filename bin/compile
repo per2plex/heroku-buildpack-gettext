@@ -19,6 +19,7 @@ mkdir -p $DEST_DIR
 curl https://s3-sa-east-1.amazonaws.com/heroku-buildpack-gettext/libraries/gettext.tar.gz -s | tar xzv -C $DEST_DIR > /dev/null 2>&1
 
 mkdir -p $BUILD_DIR/.profile.d
-echo "export PATH=\$PATH:\$HOME/$VENDOR_DIR/bin" > $BUILD_DIR/.profile.d/gettext.sh
+
+echo "export PATH=\$PATH:\$HOME/$VENDOR_DIR/bin; export LD_LIBRARY_PATH=\$PATH:\$HOME/$VENDOR_DIR/lib" > $BUILD_DIR/.profile.d/gettext.sh
 
 echo "-----> Done."
