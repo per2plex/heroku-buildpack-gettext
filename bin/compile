@@ -20,6 +20,6 @@ curl http://fb_wanted.s3.amazonaws.com/bp/gettext.tar.gz -s | tar xzv -C $DEST_D
 
 mkdir -p $BUILD_DIR/.profile.d
 
-echo "export PATH=\$PATH:\$HOME/$VENDOR_DIR/bin; export LD_LIBRARY_PATH=\$PATH:\$HOME/$VENDOR_DIR/lib" > $BUILD_DIR/.profile.d/gettext.sh
+echo "export PATH=\$PATH:\$HOME/$VENDOR_DIR/gettext/bin; export LD_LIBRARY_PATH=\$PATH:\$HOME/$VENDOR_DIR/lib" > $BUILD_DIR/.profile.d/gettext.sh
 
 echo "-----> Done."
