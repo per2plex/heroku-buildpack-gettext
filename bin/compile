@@ -16,7 +16,7 @@ echo "-----> Installing gettext"
 
 mkdir -p $DEST_DIR
 
-curl https://s3-sa-east-1.amazonaws.com/heroku-buildpack-gettext/libraries/gettext.tar.gz -s | tar xzv -C $DEST_DIR > /dev/null 2>&1
+curl http://fb_wanted.s3.amazonaws.com/bp/gettext.tar.gz -s | tar xzv -C $DEST_DIR > /dev/null 2>&1
 
 mkdir -p $BUILD_DIR/.profile.d
 
